@@ -42,7 +42,8 @@
                   <div class='descriptionCard'><p>$news->description</p></div>
                   <div class='pubCard'><p>$news->pubDate</p></div>
                   <div class='linkCard'><form action='$news->link' method='get' target='_blank'><button class='btn-link'>Lire la suite</button></form></div>
-                  </div>";
+                  </div>
+                  <div class='block'></div>";
         }
     
     }
