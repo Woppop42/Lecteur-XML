@@ -90,3 +90,21 @@ button:hover{
     font-size : 14px;
     font-style: italic;
 }
+footer {
+    background-color: rgb(48, 46, 135);
+    padding : 20px;
+}
+.footer a{
+    color: white;
+}
+h3 {
+    color : white;
+}
+.footer {
+    display: flex;
+    flex-direction: row;
+}
+.suggest1 {
+    margin-right : 20px;
+    margin-left : 20px; 
+}
