@@ -22,10 +22,18 @@
 </header>
 <body>
     <?php
+    // Affichage du fil d'actu quand une adresse xml est entré dans l'input puis envoyé via $_POST
     if(isset($_POST['submit']))
     {
         $url = $_POST['url'];
-        displayAll($url);
+        if(validXML($url))
+        {
+            displayAll($url);
+        }else
+        {
+            echo "<p class='errorMessage'>Veuillez entrer une adresse XML valide.</p>";
+        }
+        
     }
     
     function displayAll($url)
@@ -48,9 +56,21 @@
         }
     
     }
+
+    function validXML($url){
+        if(strpos($url, 'xml') !== 'xml')
+        {
+            return true;
+        }else 
+        {
+            return false;
+        }
+
+    }
     ?>
 </body>
 <footer>
+    <!-- Footer contenant des suggestions et contenant de liens clickables affichant sur la page leur contenu après le click -->
     <div class='footer'>
         <h3>Quelques suggestions :</h3>
         <div class="suggest1">
@@ -65,6 +85,32 @@
             <li><a href="" onclick="copyLink(event,'https://www.lemonde.fr/sciences/rss_full.xml')">Sciences</a></li>
             <li><a href="" onclick="copyLink(event, 'https://www.lemonde.fr/culture/rss_full.xml')">Culture</a></li>
             <li><a href="" onclick="copyLink(event, 'https://www.lemonde.fr/economie/rss_full.xml')">Economie</a></li>
+        </ul>
+    </div>
+    <div class="suggest3">
+        <ul>
+            <li>
+                <a href="" onclick="copyLink(event, 'https://www.liberation.fr/arc/outboundfeeds/rss-all/category/checknews/?outputType=xml')">CheckNews</a>
+            </li>
+            <li>
+                <a href="" onclick="copyLink(event, 'https://www.liberation.fr/arc/outboundfeeds/rss-all/category/environnement/?outputType=xml')">Environnement</a>
+            </li>
+            <li>
+                <a href="" onclick="copyLink(event, 'https://www.liberation.fr/arc/outboundfeeds/rss-all/category/politique/?outputType=xml')">Politique</a>
+            </li>
+        </ul>
+    </div>
+    <div class="suggest4">
+        <ul>
+            <li>
+                <a href="" onclick="copyLink(event, 'https://www.liberation.fr/arc/outboundfeeds/rss-all/category/portraits/?outputType=xml')">Portraits</a>
+            </li>
+            <li>
+            <a href="" onclick="copyLink(event, 'https://www.courrierinternational.com/feed/all/rss.xml')">Courrier International</a>
+            </li>
+            <li>
+                <a href="" onclick="copyLink(event, 'https://www.cairn.info/rss/rss_revues.xml')">Cairn</a>
+            </li>
         </ul>
     </div>
             

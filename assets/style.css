@@ -35,8 +35,6 @@ input {
     display: flex;
     justify-content: center;
     padding : 40px;
-    
-    
 }
 button {
     width : 90px;
@@ -46,8 +44,7 @@ button {
     border-radius: 15px;
     margin : 10px;
     font-size: 20px;
-    font-style: bold;
-    
+    font-style: bold;  
 }
 .btn-link{
     font-size : 14px;
@@ -103,8 +100,25 @@ h3 {
 .footer {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 .suggest1 {
     margin-right : 20px;
     margin-left : 20px; 
+}
+.suggest2 {
+    margin-right : 20px;
+    margin-left : 20px; 
+}
+.suggest3 {
+    margin-right : 20px;
+    margin-left : 20px; 
+}
+a:hover{
+    color :red;
+}
+.errorMessage {
+    text-align: center;
+    color : red;
+    margin : auto;
 }
