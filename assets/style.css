@@ -3,7 +3,7 @@
     margin : 0;
     padding : 0;
     font-family: 'Poppins', sans-serif;
-    color : rgb(48, 46, 135);
+    color : rgb(48, 46, 135)
 }
 header {
     background-color : rgb(48, 46, 135);
@@ -24,27 +24,30 @@ h1{
     
 }
 input {
+    appearance: none;
     text-align: center;
     margin: auto;
     width : 500px;
     border-radius: 10px;
-    border-color: black ;
+    border : 1px white;
     height : 20px;
+}
+button {
+    width : 90px;
+    height : 40px;
+    background-color: rgb(255, 232, 214);
+    border : 1px white;
+    border-radius: 15px;
+    margin : 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color : rgb(229, 32, 55);
 }
 .btn{
     display: flex;
     justify-content: center;
     padding : 40px;
-}
-button {
-    width : 90px;
-    height : 40px;
-    background-color: rgb(161, 217, 245);
-    border : 1px solid black;
-    border-radius: 15px;
-    margin : 10px;
-    font-size: 20px;
-    font-style: bold;  
+    color : rgb(48, 46, 135);
 }
 .btn-link{
     font-size : 14px;
