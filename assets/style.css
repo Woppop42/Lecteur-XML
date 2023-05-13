@@ -47,6 +47,9 @@ button {
     display: flex;
     justify-content: center;
     padding : 40px;
+    
+}
+.btn-lecture{
     color : rgb(48, 46, 135);
 }
 .btn-link{

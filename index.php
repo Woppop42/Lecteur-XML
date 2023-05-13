@@ -14,8 +14,8 @@
     <div class="container-input">
         <form action="" method="post" id="form">
             <input type="text" placeholder="Copiez votre lien ici" name="url" id="input">
-            <div class="btn" id="btn">
-                <button type="submit" name="submit" id='btn'>Lire</button>
+            <div class="btn">
+                <button type="submit" name="submit" id='btn' class="btn-lecture">Lire</button>
             </div>
         </form>
     </div>
