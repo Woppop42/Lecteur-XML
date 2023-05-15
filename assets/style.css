@@ -60,7 +60,7 @@ button {
     border-radius: 20px;
 }
 button:hover{
-    background-color: blue;
+    background-color: rgb(233, 76, 76);
     color : white;
 }
 .card{
@@ -121,7 +121,7 @@ h3 {
     margin-left : 20px; 
 }
 a:hover{
-    color :red;
+    color :rgb(233, 76, 76);
 }
 .errorMessage {
     text-align: center;

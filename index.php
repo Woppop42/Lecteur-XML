@@ -26,12 +26,9 @@
     if(isset($_POST['submit']))
     {
         $url = $_POST['url'];
-        if(validXML($url))
+        if(validXML($url) == true)
         {
             displayAll($url);
-        }else
-        {
-            echo "<p class='errorMessage'>Veuillez entrer une adresse XML valide.</p>";
         }
         
     }
@@ -56,16 +53,14 @@
         }
     
     }
-
+    
     function validXML($url){
-        if(strpos($url, 'xml') !== 'xml')
-        {
+        if(preg_match('/xml$/', $url)){
             return true;
-        }else 
-        {
+        }else{
+            echo "<p class='errorMessage'>Veuillez entrer une adresse XML valide.</p>";
             return false;
         }
-
     }
     ?>
 </body>
