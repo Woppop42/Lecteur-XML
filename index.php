@@ -10,6 +10,7 @@
     <title>Lecteur XML</title>
 </head>
 <header>
+    <!-- H1 du site et input servant à lire un flux RSS -->
     <h1>Copiez un lien XML dans le lecteur</h1>
     <div class="container-input">
         <form action="" method="post" id="form">
@@ -25,22 +26,31 @@
     // Affichage du fil d'actu quand une adresse xml est entré dans l'input puis envoyé via $_POST
     if(isset($_POST['submit']))
     {
+        // Appel de la fonction de vérification de l'url si le bouton est submit
         $url = $_POST['url'];
         if(validXML($url) == true)
         {
+            // Lecture du flux après vérification :
             displayAll($url);
         }
         
     }
     
+    // Fonction de lectue et d'affichage du flux RSS
     function displayAll($url)
     {
+        // Récupération de l'url
         $xml = file_get_contents($url);
+        // récupération du flux sous forme d'objet :
         $xml = simplexml_load_string($xml);
+        // Compteur d'articles 
         $articles = 0;
+        // Nombres d'articles affichés 
         $articlesMax = 10;
+        // Foreach sur l'objet xml récupéré précédemment 
         foreach($xml->channel->item as $news)
         {
+            // Affichage des infos de chaque article dans une card
             echo "<div class='card'>
                   <div class='titleCard'><h2>$news->title</h2></div>
                   <div class='descriptionCard'><p>$news->description</p></div>
@@ -54,6 +64,7 @@
     
     }
     
+    // Fonction de vérification sommaire avec une regex pour s'assurer qu'il s'agit bien d'une adresse XML
     function validXML($url){
         if(preg_match('/xml$/', $url)){
             return true;
@@ -69,6 +80,7 @@
     <div class='footer'>
         <h3>Quelques suggestions :</h3>
         <div class="suggest1">
+            <!-- Appel de la fonction copyLink sur les flux rss en suggestion -->
             <ul>
             <li><a href="" onclick="copyLink(event,'https://www.lemonde.fr/international/rss_full.xml')">International</a></li>
             <li><a href="" onclick="copyLink(event, 'https://www.lemonde.fr/jeux-video/rss_full.xml')">Jeux-vidéos</a></li>
